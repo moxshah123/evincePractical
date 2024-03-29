@@ -1,0 +1,107 @@
+<div class="container">
+  <div routerLink="/" class="d-flex" role="button">
+    <mat-icon>arrow_back</mat-icon>
+    <span class="mx-2">Back to list</span>
+  </div>
+  <div>
+    <form action="" [formGroup]="employeeForm">
+      <div class="form-group my-2 col-4">
+        <label for="">Employee Name*</label>
+        <input type="text" class="form-control" formControlName="empName" />
+        <div *ngIf="empForm['empName'].touched || isSubmitted">
+          <span *ngIf="empForm['empName'].hasError('required')" class="err"
+            >Please enter Name of employee</span
+          >
+        </div>
+      </div>
+
+      <div class="form-group my-2 col-4">
+        <label for="">Email*</label>
+        <input type="text" class="form-control" formControlName="email" />
+        <div *ngIf="empForm['email'].touched || isSubmitted">
+          <span *ngIf="empForm['email'].hasError('required')" class="err">
+            Please enter Email
+          </span>
+          <span *ngIf="empForm['email'].hasError('pattern')" class="err">
+            Please enter Valid Email
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group my-2 col-4">
+        <label for="">Mobile Number*</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="mobileNumber"
+          maxlength="10"
+        />
+        <div *ngIf="empForm['mobileNumber'].touched || isSubmitted">
+          <span *ngIf="empForm['mobileNumber'].hasError('required')" class="err"
+            >Please Enter Mobile Number
+          </span>
+          <span *ngIf="empForm['mobileNumber'].hasError('pattern')" class="err"
+            >Please Enter Valid Mobile Number
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group my-2 col-4">
+        <label for="">Gender*</label>
+        <div>
+          <span>Male: </span>
+          <input
+            type="radio"
+            name="gender"
+            class="form-check-input"
+            value="male"
+            formControlName="gender"
+          />
+        </div>
+        <div>
+          <span>Female: </span>
+          <input
+            type="radio"
+            name="gender"
+            class="form-check-input"
+            value="female"
+            formControlName="gender"
+          />
+        </div>
+        <div *ngIf="empForm['gender'].touched || isSubmitted">
+          <span *ngIf="empForm['gender'].hasError('required')" class="err"
+            >Please Select Gender
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group my-2 col-4">
+        <label for="">Age*</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="age"
+          min="0"
+        />
+        <div *ngIf="empForm['age'].touched || isSubmitted">
+          <span *ngIf="empForm['age'].hasError('required')" class="err"
+            >Please Enter Age
+          </span>
+        </div>
+      </div>
+
+      
+      <div class="form-group my-2 col-4">
+        <label for="">Phone Number</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="phoneNumber"
+          maxlength="10"
+        />
+      </div>
+
+      <button class="btn btn-warning" (click)="onSumbit()">{{empId ? 'Edit' : 'Add'}} Employee</button>
+    </form>
+  </div>
+</div>

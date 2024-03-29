@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="my-3">
+    <button class="btn btn-dark" routerLink="add-employee">Add Employee</button>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th (click)="sortEmployees('empId')">
+            Employee Id
+            <mat-icon>{{
+              sortDirection == "asc" ? "arrow_upward" : "arrow_downward"
+            }}</mat-icon>
+          </th>
+          <th (click)="sortEmployees('empName')">
+            Name
+            <mat-icon>{{
+              sortDirection == "asc" ? "arrow_upward" : "arrow_downward"
+            }}</mat-icon>
+          </th>
+          <th (click)="sortEmployees('email')">
+            Email
+            <mat-icon>{{
+              sortDirection == "asc" ? "arrow_upward" : "arrow_downward"
+            }}</mat-icon>
+          </th>
+          <th (click)="sortEmployees('mobileNumber')">
+            Moble Number
+            <mat-icon>{{
+              sortDirection == "asc" ? "arrow_upward" : "arrow_downward"
+            }}</mat-icon>
+          </th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employeesList">
+          <td>
+            {{ employee.empId }}
+          </td>
+          <td>{{ employee.empName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.mobileNumber }}</td>
+          <td>
+            <mat-icon
+              role="button"
+              [routerLink]="['add-employee/' + employee.id]"
+              >edit</mat-icon
+            >
+            <mat-icon role="button" (click)="openDialog(employee.id)"
+              >delete</mat-icon
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+th mat-icon {
+  display: none;
+  height: 8px;
+  width: 8px;
+}
+
+th:hover mat-icon {
+  display: inline;
+  cursor: pointer;
+}

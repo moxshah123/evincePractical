@@ -1,0 +1,24 @@
+{
+  "employees": [
+    {
+      "id": "b90b",
+      "empId": "WknYizf8aY",
+      "empName": "Rushabh",
+      "email": "rs@mail.com",
+      "mobileNumber": "9898989898",
+      "gender": "male",
+      "age": 24,
+      "phoneNumber": ""
+    },
+    {
+      "id": "0bcc",
+      "empId": "Nm3ZuxtZRB",
+      "empName": "User",
+      "email": "user@mail.com",
+      "mobileNumber": "8401084091",
+      "gender": "male",
+      "age": 24,
+      "phoneNumber": ""
+    }
+  ]
+}
